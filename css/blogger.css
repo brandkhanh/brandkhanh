@@ -1,0 +1,130 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+  
+body {
+	height: 100vh;
+	font-family: "Helvetica Neue";
+	background-color: #f4f4f5;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.btn{
+	background-color: transparent;
+	border: none;
+	outline: none;
+	padding: 10px 45px;
+	border-radius:20px ;
+	color: #f4f4f5;
+	transition: opacity 0.2s linear;
+}
+.btn:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}
+.btn--sucess{
+	background-color: #71be34;
+}
+.btn--waring{
+	background-color: #ffb703;
+}
+.btn--erorr{
+	background: #ff623d;
+}
+.btn + .btn{
+	margin-left: 20px;
+}
+.btn--disabled{
+	opacity: 0.5 !important;
+	cursor: default !important;
+}
+
+#toast{
+	position: fixed;
+	top: 40px;
+	right: 30px;
+}
+
+.toast{
+	display: flex;
+	width: 400px;
+	border-radius: 6px;
+	padding: 5px 0;
+	align-items: center;
+	animation: inLeft ease 1s;
+}
+@keyframes inLeft{
+	from{
+		opacity: 0.5;
+		transform:translateX(calc(100% + 30px));
+	}
+	to{
+		transform:translateX(0) ;
+	}
+}
+.toast + .toast{
+	margin-top: 20px;
+}
+.toast__icon{
+	font-size: 16px;
+	margin-left: 10px;
+}
+.toast__body{
+	margin-left: 10px;
+	margin-right: -245px;
+	flex-grow: 1;
+}
+.toast__mes {
+	font-size: 13px;
+	width: 100%;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.toast__title{
+	width: 100%;
+}
+
+.toast__close{
+	padding-right: 10px;
+	font-size: 16px;
+	transition: 0.3;
+}
+.toast--sucess{
+	background-color: #c5f7dc;
+	border-left: 6px solid #3ac279;
+}
+.toast--sucess .toast__icon,.toast--sucess .toast__close{
+	color:#3ac279 ;
+}
+
+.toast--war{
+	background-color:#ffe8c3 ;
+	border-left: 6px solid #e89f29;
+}
+.toast--war .toast__icon, .toast--war .toast__close{
+	color:#e89f29 ;
+}
+
+.toast--infor{
+	background-color: #cde2ff;
+	border-left: 6px solid #3d84e5;
+}
+.toast--infor .toast__icon, .toast--infor .toast__close{
+	color:#3d84e5 ;
+}
+
+.toast--erorr{
+	background-color: #ffcfcb;
+	border-left: 6px solid #e9594c;
+}
+.toast--erorr .toast__icon, .toast--erorr .toast__close{
+	color:#e9594c ;
+}
+
+
+.toast__close:hover{
+	opacity: 0.5;
+	cursor: pointer;
+}
